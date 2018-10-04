@@ -6,7 +6,11 @@
   "contributors": [{
     "name": "Merlin Taylor",
     "email": "code.merlin.taylor@gmail.com"
-   }],
+   },{
+    "name": "Adam Lane",
+    "email": "enalmada@gmail.com"
+  }
+  ],
   "bin": {
     "repack-zip": "bin/repack-zip.js"
   },
@@ -36,19 +40,19 @@
   "main": "index.js",
   "maintainers": [
     {
-      "name": "Jacques-Olivier Goussard",
-      "email": "jogoussard@gmail.com"
+      "name": "Adam Lane",
+      "email": "enalmada@gmail.com"
     }
   ],
-  "name": "repack-zip",
+  "name": "repack-zip-alt",
   "optionalDependencies": {},
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jogoussard/node-repack-zip.git"
+    "url": "https://github.com/Enalmada/node-repack-zip"
   },
   "scripts": {
     "test": "node bin/repack-zip.js"
   },
-  "version": "0.2.5"
+  "version": "0.2.6"
 }

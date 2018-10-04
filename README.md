@@ -1,3 +1,6 @@
+Fork note: use repack-zip if it works for you.  I was having trouble with some packages missing package.json and the tool
+failing rather than continuing.  I made this version ignore them and will do pull request after testing that out. 
+
 This package creates a .zip file containing your package and its dependencies, including
 transitive dependencies.
 

@@ -28,8 +28,8 @@ function getPackageInfo(packageFile) {
     return readFile(packageFile, 'utf-8')
         .then(content => JSON.parse(content))
         .catch(error => {
-            console.error(`Failed to read ${packageFile}`);
-            return Promise.reject(error);
+            // console.error(`Failed to read ${packageFile}`);
+            return JSON.parse("{}");
         });
 }
 
@@ -52,8 +52,8 @@ function getTransitiveDependencies({ cwd }, dependencies, module) {
         return getPackageInfo(at('node_modules/'+module+'/package.json'))
             .then(modulePackage => Object.keys(modulePackage.dependencies || {})
                                     .concat(Object.keys(modulePackage._phantomChildren || {})))
-            .then(deps => { 
-            	return Promise.map(deps, (dep) => { 
+            .then(deps => {
+            	return Promise.map(deps, (dep) => {
                		return getTransitiveDependencies({ cwd }, dependencies, dep);
                	});
             })
@@ -65,12 +65,12 @@ function getTransitiveDependencies({ cwd }, dependencies, module) {
 
 function getPackageDependencies({ cwd }) {
     let at = resolvePathRelativeTo(cwd);
-	
+
     return getPackageInfo(at('package.json'))
         .then(rootPackage => Object.keys(rootPackage.dependencies || {})
                                 .concat(Object.keys(rootPackage._phantomChildren || {})))
         .then(rootDependencies => {
-			let totalDependencies = [];            
+			let totalDependencies = [];
         	return Promise.all(rootDependencies.map(dep => getTransitiveDependencies({ cwd }, totalDependencies, dep)))
         		.then(() => { return totalDependencies;} );
         })
