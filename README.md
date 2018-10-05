@@ -17,7 +17,7 @@ all their transitives dependencies
 
 ## Installation
 
-`npm install --save-dev repack-zip`
+`npm install --save-dev repack-zip-alt`
 
 ## Example
 
@@ -25,7 +25,7 @@ _my-lambda_ is an npm package I want to run as an AWS Lambda Function.
 
 Install _repack-zip_ locally in _my-lambda_
 ```
-npm install --save-dev repack-zip
+npm install --save-dev repack-zip-alt
 ```
 
 Install any runtime dependencies of _my-lambda_.
@@ -36,7 +36,7 @@ npm install
 Modify _my-lambda/package.json_:
 ```
 "scripts": {
-    "build-aws-lambda": "repack-zip"
+    "build-aws-lambda": "repack-zip-alt"
     ...
 }
 ```
