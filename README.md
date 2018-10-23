@@ -36,7 +36,7 @@ npm install
 Modify _my-lambda/package.json_:
 ```
 "scripts": {
-    "build-aws-lambda": "repack-zip-alt"
+    "build-aws-lambda": "repack-zip"
     ...
 }
 ```
